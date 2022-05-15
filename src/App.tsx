@@ -16,7 +16,6 @@ const App: React.FC = ()=>{
     <Provider store={store}>
       <Router>
         <Layout/>
-        <RouterContainer/>
       </Router>
     </Provider>
   );
