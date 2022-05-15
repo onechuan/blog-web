@@ -1,4 +1,4 @@
-import { SVG_SPRITE } from "@/config/constants";
+import { SVG_SPRITE } from "@/styled/constants";
 
 export interface INavItem {
     to: string;

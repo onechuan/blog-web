@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { NavBar,SVG } from "./styled";
-import { SVG_SPRITE } from "@/config/constants";
+import { SVG_SPRITE } from "@/styled/constants";
 
 const Nav: React.FC = ()=>{
   return (
