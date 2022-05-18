@@ -17,6 +17,7 @@ export const MottoSocialMediaBar = styled.section`
 export const HomeMain = styled.section`
   max-width: 59rem;
   text-align: center;
+  margin: 0 auto;
   @media only screen and (${breakpoints.device.laptop}) {
     max-width: 100%;
     margin-top: 1rem;

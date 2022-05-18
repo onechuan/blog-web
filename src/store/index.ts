@@ -1,5 +1,4 @@
-import { configureStore } from '@reduxjs/toolkit';
-import { useDispatch, useSelector } from 'react-redux';
+import { AnyAction, configureStore, ThunkAction, ThunkDispatch } from '@reduxjs/toolkit';
 
 import rootReducer from './rootReducer';
 
@@ -11,13 +10,14 @@ const store = configureStore({
     devTools: true
 });
 
-type AppState = ReturnType<typeof rootReducer>;
-type AppDispatch = typeof store.dispatch;
-
-export const useAppDispatch = () => useDispatch<AppDispatch>();
-
-export const useAppState = <T extends (state: AppState) => any>(selector: T): ReturnType<T> => useSelector(selector);
-
-export const useStore = () => store.getState() as AppState;
-
+export type RootState = ReturnType<typeof store.getState>;
+export type ReduxState = ReturnType<typeof rootReducer>;
+export type AppDispatch = typeof store.dispatch;
+export type TypedDispatch = ThunkDispatch<ReduxState, any, AnyAction>;
+export type TypedThunk<ReturnType = void> = ThunkAction<
+  ReturnType,
+  ReduxState,
+  unknown,
+  AnyAction
+>;
 export default store;
