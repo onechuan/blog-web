@@ -1,14 +1,13 @@
 import { FC } from 'react'
 import styled from 'styled-components'
-import LazyLoadImage from '@/components/LazyLoadImage'
+import LazyLoadImage from '@/components/LazyLoadImage';
+import cover from "@/assets/img/dot.png"
 import { ICover } from '../interface'
 
-const Covers = styled.figure`
+const CoverWrapper = styled.figure`
   position: relative;
-  margin-bottom: 3.2rem;
   width: 100vw;
   height: 100vh;
-
   &::after {
     position: absolute;
     content: '';
@@ -16,21 +15,26 @@ const Covers = styled.figure`
     height: 100%;
     top: 0;
     left: 0;
-    background-image: url('images/dot.png');
+    background-image: url(${cover});
     background-repeat: repeat;
     opacity: 0.5;
   }
 `
 
 interface Props {
-  covers: ICover[]
-  loading: boolean
+  cover: string;
+  loading: boolean;
 }
 
-const Cover: FC<Props> = ({ covers, loading }) => {
+const Cover: FC<Props> = ({ cover, loading }) => {
   return (
-    <Covers>
-    </Covers>
+    <CoverWrapper>
+      {
+        !loading && (
+          <LazyLoadImage src={cover}/>
+        )
+      }
+    </CoverWrapper>
   )
 }
 

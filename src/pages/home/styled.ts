@@ -3,6 +3,8 @@ import breakpoints from '@/styled/breakpoints'
 
 export const HomeContainer = styled.section`
   position: relative;
+  height: 100vh;
+  width: 100vw;
 `
 
 export const MottoSocialMediaBar = styled.section`
@@ -13,11 +15,9 @@ export const MottoSocialMediaBar = styled.section`
 `
 
 export const HomeMain = styled.section`
-  margin: 0 auto;
   max-width: 59rem;
   text-align: center;
-
-  @media only screen and ${breakpoints.device.laptop} {
+  @media only screen and (${breakpoints.device.laptop}) {
     max-width: 100%;
     margin-top: 1rem;
     padding: 0 1rem;
@@ -26,8 +26,9 @@ export const HomeMain = styled.section`
 
 export const CoverWrapper = styled.div`
   position: relative;
+  z-index: 10;
 
-  @media only screen and ${breakpoints.device.laptop} {
+  @media only screen and (${breakpoints.device.laptop}) {
     display: none;
   }
 `

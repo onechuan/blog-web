@@ -1,8 +1,12 @@
 import React from 'react';
 
-const LazyLoadImage: React.FC = ()=>{
+interface IProps{
+    src: string;
+}
+
+const LazyLoadImage: React.FC<IProps> = ({src})=>{
     return (
-        <h1>img</h1>
+        <img className='cover' style={{width:"100%",height:"100%"}}  src={src}/>
     )
 }
 
