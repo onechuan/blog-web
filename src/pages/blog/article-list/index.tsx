@@ -25,7 +25,9 @@ const ArticleList: React.FC<IProps> = ({articleList}) =>{
             articleList && articleList.map(
                 (article: IArticle)=>
                 (<Link key={article.id} to={`/article/detail/${article.id}`}>
-                    <li  className="content-item flex-pc flex-m">
+                    
+                    <li  className={`content-item flex-pc flex-m `}>
+
                         <div className="content-item-left cover-container ">
                             <img className="cover" src={article.cover} alt="" />
                         </div>

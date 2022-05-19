@@ -12,15 +12,17 @@ export const ListWrapper =  styled.ul`
         padding: 20px;
         display: flex;
         margin-bottom: 20px;
-        background-color: #fff;
-        
+        background-color: rgba(255, 255, 255, 0.5);
+        border: 1px solid #ccc;
         cursor: pointer;
-        background: rgb(240, 245, 255);
+        color: #333;
+        /* background: rgb(240, 245, 255); */
         
         &:hover {
             transform: translateY(-1px);
             box-shadow: 0 4px 10px #ccc;
-            background-color: rgba(255, 255, 255, 0.5);
+            
+            background: rgb(240, 245, 255);
         }
         .content-item-left{
             width: 240px;
@@ -31,7 +33,10 @@ export const ListWrapper =  styled.ul`
             .cover{
                 width: 100%;
                 height: 100%;
-                object-fit: cover
+                object-fit: cover;
+                &:hover{
+                    transform: scale(2);
+                }
             }
         }
         .content-item-right{
@@ -49,6 +54,7 @@ export const ListWrapper =  styled.ul`
                 }
             }
         }
+        
     }
     .content-item:nth-child(n){
         animation: cssnice .7s ease-out forwards;

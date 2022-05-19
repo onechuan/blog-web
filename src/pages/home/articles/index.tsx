@@ -1,17 +1,28 @@
 
-import React from "react";
+import { fetchArticleList } from "@/api/article";
+import { IArticle } from "@/interface/article";
+import React, { useEffect, useState } from "react";
 import { ArticleContainer, ArticlesWrapper } from "./styles";
 
 
 const Articles: React.FC = ()=>{
+
+    const [articles, setArticles] = useState<IArticle[]>([])
+
+    useEffect(()=>{
+        fetchArticleList().then(res=>{
+            console.log("res",res);
+            setArticles(res.articles)
+        })
+    },[])
     return (
         <ArticleContainer>
             <h2 className='title'>The Latest!</h2>
             <ArticlesWrapper>
                 {
-                    [1,2,3].map((item:any)=>{
+                    articles.map((article:any)=>{
                         return (
-                            <li key={item} className='article-item'>
+                            <li key={article.id} className='article-item'>
                                 <img className='cover' src="https://edge.yancey.app/beg/e4df44ff5e34d207aaa69806c88d70df-700.jpg" alt="" />
                                 <div className="content">
                                     <p className="time">Released At May 2, 2022</p>

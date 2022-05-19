@@ -1,7 +1,8 @@
-import React, { useState} from "react";
+import React, { useEffect, useState} from "react";
 import {Input,Divider, Pagination} from "antd";
 import {ArticleWrapper,PaginationWrapper} from "./styles"
 import ArticleList from "./article-list";
+import { fetchArticleList } from "@/api/article";
 
 interface IArticle {
     id:number;
@@ -17,9 +18,21 @@ interface IArticle {
 
 
 const ArticlePage: React.FC = ()=>{
-    const [articleList, setArticleList] = useState< IArticle[]>([]);
+    const [articles, setArticles] = useState<IArticle[]>([]);
     const [total, setTotal] = useState(0);
     const [current, setCurrent] = useState(1);
+
+    useEffect(()=>{
+        fetchArticleList().then(res=>{
+            console.log("res",res);
+            setArticles(res.articles)
+            setTotal(res.total)
+            setCurrent(res.current)
+        })
+    },[])
+
+    
+    
 
     function onChange(page:number, pageSize:number){
         console.log("page",page);
@@ -29,7 +42,7 @@ const ArticlePage: React.FC = ()=>{
     return (
         <ArticleWrapper>
             <Divider  orientation="left"><span style={{marginRight:"20px"}}>博客总计：20篇</span>  <Input.Search placeholder="搜索文章..."  size="middle" style={{ width: 160 }} /></Divider>
-            <ArticleList articleList={articleList}/>
+            <ArticleList articleList={articles}/>
             <PaginationWrapper>
                 <Pagination current={current} size="small" total={total} showSizeChanger showQuickJumper onChange={(page, pageSize)=>onChange(page, pageSize)}/>
             </PaginationWrapper>
