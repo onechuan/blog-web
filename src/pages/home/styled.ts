@@ -18,6 +18,7 @@ export const HomeMain = styled.section`
   max-width: 59rem;
   text-align: center;
   margin: 0 auto;
+  padding-bottom: .5rem;
   @media only screen and (${breakpoints.device.laptop}) {
     max-width: 100%;
     margin-top: 1rem;

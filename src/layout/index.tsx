@@ -2,6 +2,7 @@ import RouterContainer from "@/router";
 import { Spin } from "antd";
 import React,{Suspense} from "react";
 import { Outlet } from "react-router-dom";
+import Footer from "./footer";
 import Header from "./header/header";
 import { LayoutWrapper, MainWrapper } from "./styled";
 
@@ -19,6 +20,7 @@ const Layout: React.FC<IProps> = ({title, children})=>{
                     <RouterContainer/>
                 </Suspense>
             </MainWrapper>
+            <Footer/>
         </LayoutWrapper>
     )
 }

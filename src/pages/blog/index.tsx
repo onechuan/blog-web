@@ -41,7 +41,7 @@ const ArticlePage: React.FC = ()=>{
     }
     return (
         <ArticleWrapper>
-            <Divider  orientation="left"><span style={{marginRight:"20px"}}>博客总计：20篇</span>  <Input.Search placeholder="搜索文章..."  size="middle" style={{ width: 160 }} /></Divider>
+            <Divider  orientation="left"><span style={{marginRight:"20px"}}>博客总计：{total}篇</span>  <Input.Search placeholder="搜索文章..."  size="middle" style={{ width: 160 }} /></Divider>
             <ArticleList articleList={articles}/>
             <PaginationWrapper>
                 <Pagination current={current} size="small" total={total} showSizeChanger showQuickJumper onChange={(page, pageSize)=>onChange(page, pageSize)}/>
