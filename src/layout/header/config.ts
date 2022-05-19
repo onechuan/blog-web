@@ -23,9 +23,9 @@ export const navMap: INavItem[] = [
         title:"Archive"
     },
     {
-        to:"/music",
+        to:"/Timeline",
         link:SVG_SPRITE.music,
-        title:"Music"
+        title:"Timeline"
     },
     {
         to:"/about",
