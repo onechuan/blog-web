@@ -1,6 +1,6 @@
 import http from "./http";
 
-export function fetchArticleList(params: any = {}): Promise<any>{
+export function fetchArticles(params: any = {}): Promise<any>{
     return http.get("/article/list",{...params});
 }
 

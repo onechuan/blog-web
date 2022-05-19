@@ -1,20 +1,27 @@
 
-import { fetchArticleList } from "@/api/article";
 import { IArticle } from "@/interface/article";
+import { RootState } from "@/store";
+import { getArticles } from "@/store/article";
+import { useTypedDispatch } from "@/store/hooks";
 import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 import { ArticleContainer, ArticlesWrapper } from "./styles";
 
 
 const Articles: React.FC = ()=>{
 
-    const [articles, setArticles] = useState<IArticle[]>([])
+    
+    const [current, setCurrent] = useState(1);
+
+    const articleData = useSelector((state: RootState)=>state.article.data);
+    const {articles} = articleData;
+    const dispatch = useTypedDispatch();
 
     useEffect(()=>{
-        fetchArticleList().then(res=>{
-            console.log("res",res);
-            setArticles(res.articles)
-        })
+        dispatch(getArticles({}))
     },[])
+    console.log("articles",articleData);
+
     return (
         <ArticleContainer>
             <h2 className='title'>The Latest!</h2>
