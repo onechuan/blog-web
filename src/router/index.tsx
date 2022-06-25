@@ -1,3 +1,4 @@
+import Detail from "@/pages/blog/detail";
 import  React, { lazy } from "react";
 import { useRoutes } from "react-router-dom";
 
@@ -24,9 +25,10 @@ const RouterContainer: React.FC = ()=>{
     return useRoutes([
         {path:"/", element:<Home/>},
         {path:"/blog",element:<Blog/>},
+        {path:"/article/detail/:id",element:<Detail/>},
         {path:"/timeline",element:<Timeline/>},
         {path:"/about",element:<About/>},
-        {path:"/archive",element:<Archive/>}
+        {path:"/archive",element:<Archive/>},
     ])
 }
 

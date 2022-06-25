@@ -28,6 +28,7 @@ export const getArticles = createAsyncThunk(
     "article/list",
     async (params:any, thunkAPI)=>{
         const res = await fetchArticles();
+        console.log("res", res);
         
         return res;
     }
@@ -52,6 +53,6 @@ export const articleSlice = createSlice({
             state.error = action.payload;
         }
     }
-})
+});
 
 export default null;

@@ -14,8 +14,6 @@ import { CoverWrapper, HomeContainer, HomeMain, MottoSocialMediaBar } from "./st
 const cover = "https://edge.yancey.app/beg/abft7ifo-1645915912191.jpeg";
 
 const HomePage: React.FC = ()=>{
-
-    
     return (
         <HomeContainer>
             <CoverWrapper>

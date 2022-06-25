@@ -11,7 +11,6 @@ const App: React.FC = ()=>{
   const {theme, toggleTheme} = useThemeMode();
   const themeMode = theme === ThemeMode.LIGHT ? lightTheme : darkTheme;
 
-
   return (
     <Provider store={store}>
       <Router>
