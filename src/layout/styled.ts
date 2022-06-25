@@ -5,6 +5,7 @@ export const LayoutWrapper = styled.section`
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: #e4e6eb;
 `
 
 export const MainWrapper = styled.main`

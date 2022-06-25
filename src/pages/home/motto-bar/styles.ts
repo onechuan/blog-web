@@ -35,7 +35,7 @@ export const SocialMediaIconWrapper = styled.ul`
         height: 2rem;
         font-size: 2rem;
         margin: 0px 1rem;
-        color: ${({ theme }) => theme.colors.white};
+        color: ${({ theme }) => theme.colors.black};
         cursor: pointer;
         text-align: center;
     }

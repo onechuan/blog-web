@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import ReactMarkdown from 'react-markdown';
 import { ArticleHeader, ArticleMain, ArticleWrapper } from "./styles";
 import {EyeOutlined, LikeOutlined, MessageOutlined, ClockCircleOutlined} from "@ant-design/icons";
+import { Breadcrumb } from "antd";
+import { Link } from "react-router-dom";
 
 interface IArticle {
     title:string;
@@ -24,10 +26,14 @@ const Detail: React.FC = ()=>{
     })
     return (
         <ArticleWrapper>
+            <Breadcrumb>
+                <Breadcrumb.Item><Link to="/blog">文章</Link></Breadcrumb.Item>
+                <Breadcrumb.Item>{article?.title}</Breadcrumb.Item>
+            </Breadcrumb>
             <ArticleHeader>
-                <h1 className="title">题目: {article?.title}</h1>
+                <h1 className="title"> {article?.title}</h1>
                 <ul className="info">
-                    <li className="info-item">< ClockCircleOutlined /><span>{article?.time}</span></li>
+                    <li className="info-item"><ClockCircleOutlined /><span>{article?.time}</span></li>
                     <li className="info-item"><LikeOutlined/><span>{article?.likes}</span></li>
                     <li className="info-item"><EyeOutlined /><span>{article?.reads}</span></li>
                     <li className="info-item"><MessageOutlined /><span>{article?.reviews}</span></li>
@@ -36,7 +42,7 @@ const Detail: React.FC = ()=>{
             <ArticleMain>
                 <ReactMarkdown>{article.content as string}</ReactMarkdown>
             </ArticleMain>
-            
+        
         </ArticleWrapper>
     )
 };

@@ -21,7 +21,11 @@ export const NavBar = styled.nav`
   }
 `;
 
-
+export const NavBarWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  
+`
 export const NavBarItem = styled.ul`
   ${flexMixin('flex-start')}
   margin-right: 28.5rem;
@@ -70,6 +74,26 @@ export const NavBarItem = styled.ul`
     }
   }
 `
+
+export const Interactions = styled.ul`
+  ${flexMixin('center')}
+`
+
+export const SocialMediaIconWrapper = styled.ul`
+    display: flex;
+    justify-content: center;
+    li{
+        width: 1.5rem;
+        font-size: 1.5rem;
+        margin: 0px 1rem;
+        color: ${({ theme }) => theme.colors.primary};
+        cursor: pointer;
+        text-align: center;
+    }
+    li:hover{
+        transform: scale(2);
+    }
+`;
 
 export const Logo = styled.a`
   width: 14.67rem;

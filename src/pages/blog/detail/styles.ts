@@ -1,10 +1,17 @@
 import styled from "styled-components";
 
 export const ArticleWrapper = styled.div`
+    width: 994px;
+    height: 100vh;
     padding: 20px;
+    margin: 0 auto;
+    margin-top: 90px;
+    margin-bottom: 20px;
+    background-color: #f0f5ff;
 `;
 
 export const ArticleHeader = styled.div`
+    margin-top: 20px;
     .title{
         font-size: 30px;
         font-weight: bolder;
